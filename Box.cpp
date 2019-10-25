@@ -38,7 +38,10 @@ class Box{
     long long CalculateVolume(){
         return (long long)l*b*h;
     }
-    
+
+
+    //Overload operator < as specified
+    //bool operator<(Box& b)
     friend bool operator < ( Box&A,Box& B){
         if( (A.l < B.l) || ((A.b < B.b) && (A.l == B.l)) || ((A.h < B.h) && (A.l == B.l) && (A.b == B.b)) ){
             return true;
@@ -47,11 +50,18 @@ class Box{
         }
     };
     
+
+    //Overload operator << as specified
+    //ostream& operator<<(ostream& out, Box& B)
     friend ostream& operator<< (ostream& output, const Box& B){
         output << B.l << " " << B.b << " " << B.h;
         return output;
     }
+
+
 };
+
+
 
 void check2()
 {
